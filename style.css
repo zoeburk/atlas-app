@@ -40,19 +40,46 @@ p{margin:0;color:var(--muted)}
 }
 .status.ok{background:var(--olive-soft);color:#4F624A;border-color:#DDE8D6}
 .available{
-  padding:24px 0 30px;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  margin-bottom:28px;
+  background:#EEF4EB;
+  border-radius:24px;
+  padding:26px;
+  margin-bottom:30px;
+  border:none;
+}
+
+.available p{
+  font-size:15px;
+  color:#5B6955;
+  margin-bottom:8px;
+}
+
+.available h2{
+  font-size:56px;
+  font-weight:600;
+  margin:0;
 }
 .available p{font-size:15px;margin-bottom:8px}
 .available h2{font-size:52px;line-height:1;margin:0;font-weight:600;letter-spacing:-0.05em}.section{margin-bottom:28px}
 .section-title{font-size:14px;color:var(--muted);margin-bottom:12px;font-weight:550}
 .section-row{display:flex;align-items:center;justify-content:space-between}
-..goal-card,.metric{
-  background:rgba(255,255,255,.72);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
+.goal-card,
+.metric{
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  padding: 18px;
+  transition: .2s;
+}
+
+.goal-card:nth-child(2){
+  background:#F4F6EF;
+}
+
+.goal-card:nth-child(3){
+  background:#F8F4EC;
+}
+
+.metric{
+  background:#FFFFFF;
 }
 .goal-card{
   padding:18px;
