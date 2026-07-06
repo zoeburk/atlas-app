@@ -1,0 +1,109 @@
+:root{
+  --bg:#FAF9F6;
+  --card:#FFFFFF;
+  --text:#1F1F1F;
+  --muted:#77736B;
+  --line:#E8E3DB;
+  --olive:#7A8A72;
+  --olive-soft:#EEF2EA;
+  --danger:#A35D55;
+  --radius:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing:-0.01em;
+}
+.app{
+  width:100%;
+  padding:28px 20px 104px;
+}
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:34px;
+}
+h1{font-size:30px;line-height:1;margin:0 0 8px;font-weight:600}
+p{margin:0;color:var(--muted)}
+.status{
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  white-space:nowrap;
+  border:1px solid var(--line);
+}
+.status.ok{background:var(--olive-soft);color:#4F624A;border-color:#DDE8D6}
+.available{
+  padding:24px 0 30px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  margin-bottom:28px;
+}
+.available p{font-size:15px;margin-bottom:8px}
+.available h2{font-size:52px;line-height:1;margin:0;font-weight:600;letter-spacing:-0.05em}.section{margin-bottom:28px}
+.section-title{font-size:14px;color:var(--muted);margin-bottom:12px;font-weight:550}
+.section-row{display:flex;align-items:center;justify-content:space-between}
+..goal-card,.metric{
+  background:rgba(255,255,255,.72);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+}
+.goal-card{
+  padding:18px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  margin-bottom:12px;
+}
+.goal-card h3{margin:0 0 6px;font-size:17px;font-weight:600}
+.goal-card strong{font-size:17px;font-weight:650}
+.progress{grid-column:1/-1;height:8px;background:#EFECE6;border-radius:999px;overflow:hidden}
+.progress span{display:block;height:100%;background:var(--olive);border-radius:999px;width:0%}
+.compact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.metric{padding:16px 14px;min-height:82px}
+.metric span{display:block;color:var(--muted);font-size:13px;margin-bottom:12px}
+.metric strong{font-size:20px;font-weight:650;letter-spacing:-0.03em}
+.text-button{border:0;background:transparent;color:var(--olive);font:inherit;font-weight:650;padding:4px 0;cursor:pointer}
+.movement-list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.movement-list.empty{padding:20px;color:var(--muted)}
+.movement{display:flex;justify-content:space-between;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.movement:last-child{border-bottom:0}
+.movement h4{margin:0 0 5px;font-size:16px;font-weight:600}
+.movement small{color:var(--muted)}
+.amount{font-weight:650;white-space:nowrap}
+.amount.expense{color:var(--danger)}
+.amount.income{color:var(--olive)}
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:rgba(250,249,246,.94);
+  border-top:1px solid var(--line);
+  backdrop-filter:blur(12px);
+  padding:10px 8px 18px;
+}
+.bottom-nav button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:8px 4px;border-radius:999px}
+.bottom-nav button.active{background:var(--olive-soft);color:#4F624A;font-weight:650}
+dialog{border:0;border-radius:28px;padding:0;max-width:430px;width:calc(100% - 28px);background:transparent}
+dialog::backdrop{background:rgba(31,31,31,.18)}
+.modal-card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;display:grid;gap:14px}
+.modal-card h2{margin:0 0 8px;font-size:24px}
+label{display:grid;gap:7px;color:var(--muted);font-size:13px}
+input,select{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;padding:13px 12px;font:inherit;color:var(--text)}
+.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+button{border:0;border-radius:14px;padding:13px 14px;background:var(--olive);color:#fff;font:inherit;font-weight:650;cursor:pointer}
+button.secondary{background:#F0ECE5;color:var(--text)}
+@media (min-width:760px){
+  .app{padding:42px 48px 112px}.available h2{font-size:68px}.compact-grid{gap:14px}.metric{padding:20px}
+}
+@media (min-width:1100px){
+  .app{
+    padding-left:72px;
+    padding-right:72px;
+  }
+}

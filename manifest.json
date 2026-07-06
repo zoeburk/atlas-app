@@ -1,0 +1,10 @@
+{
+  "name": "Atlas",
+  "short_name": "Atlas",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FAF9F6",
+  "theme_color": "#FAF9F6",
+  "description": "Control financiero personal simple y privado.",
+  "icons": []
+}

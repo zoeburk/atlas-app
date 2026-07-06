@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#FAF9F6" />
+  <title>Atlas</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <h1>Atlas</h1>
+        <p id="monthLabel">Mes actual</p>
+      </div>
+      <div class="status ok">Todo en orden</div>
+    </header>
+
+    <section class="available">
+      <p>Disponible este mes</p>
+      <h2 id="availableAmount">0 €</h2>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Objetivos</div>
+      <article class="goal-card">
+        <div>
+          <h3>Proyecto de espacio</h3>
+          <p><span id="spaceSaved">0 €</span> de <span id="spaceGoal">6000 €</span></p>
+        </div>
+        <strong id="spacePercent">0%</strong>
+        <div class="progress"><span id="spaceBar"></span></div>
+      </article>
+      <article class="goal-card">
+        <div>
+          <h3>Viajes y conciertos</h3>
+          <p><span id="travelSaved">0 €</span> de <span id="travelGoal">3000 €</span></p>
+        </div>
+        <strong id="travelPercent">0%</strong>
+        <div class="progress"><span id="travelBar"></span></div>
+      </article>
+    </section>
+
+    <section class="section compact-grid">
+      <div class="metric"><span>Ingresos</span><strong id="incomeAmount">0 €</strong></div>
+      <div class="metric"><span>Gastos</span><strong id="expenseAmount">0 €</strong></div>
+      <div class="metric"><span>Ahorro</span><strong id="savingAmount">0 €</strong></div>
+    </section>
+
+    <section class="section">
+      <div class="section-row">
+        <div class="section-title">Movimientos</div>
+        <button id="openModal" class="text-button">Nuevo</button>
+      </div>
+      <div id="movementList" class="movement-list empty">Sin movimientos todavía.</div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="active" data-tab="home">Inicio</button>
+    <button data-tab="moves">Movimientos</button>
+    <button data-tab="goals">Objetivos</button>
+    <button data-tab="more">Más</button>
+  </nav>
+
+  <dialog id="movementModal">
+    <form method="dialog" id="movementForm" class="modal-card">
+      <h2>Nuevo movimiento</h2>
+      <label>Importe <input id="amountInput" type="number" step="0.01" placeholder="42.80" required /></label>
+      <label>Tipo
+        <select id="typeInput">
+          <option value="expense">Gasto</option>
+          <option value="income">Ingreso</option>
+        </select>
+      </label>
+      <label>Categoría
+        <select id="categoryInput">
+          <option>Supermercado</option>
+          <option>Transporte</option>
+          <option>Restaurantes</option>
+          <option>Ropa</option>
+          <option>Belleza</option>
+          <option>Libros</option>
+          <option>Ocio</option>
+          <option>Suscripciones</option>
+          <option>Salud</option>
+          <option>Ingreso</option>
+          <option>Otros</option>
+        </select>
+      </label>
+      <label>Concepto <input id="conceptInput" type="text" placeholder="Mercadona" required /></label>
+      <div class="modal-actions">
+        <button type="button" id="closeModal" class="secondary">Cancelar</button>
+        <button type="submit">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
